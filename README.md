@@ -1,11 +1,9 @@
 # Runwise — landing site
 
-Dependency-free static site (HTML/CSS/JS). Open `index.html` or run `python3 -m http.server`.
+One self-contained file: `index.html` (CSS, JS, fonts and favicon inlined; no external requests).
+Legal pages live inside it and open at `#privacy`, `#terms`, `#refund`, `#cookies`.
 
-- `index.html` — landing page, pricing, signup form (**preview only: sends nothing**)
-- `privacy.html`, `terms.html`, `refund.html`, `cookies.html` — legal drafts (placeholders in `[brackets]`)
-- `assets/fonts` — self-hosted Inter + Fraunces (SIL OFL; licences included)
-- `_headers` — security headers for Netlify / Cloudflare Pages (mirror in nginx/Vercel if used)
-- `COMPLIANCE.md` — legal/security checklist and open items
-
-No analytics, no third-party scripts, fonts or embeds.
+- Signup form is a **preview only: sends nothing**.
+- Fonts: Inter + Fraunces, embedded, SIL Open Font License.
+- `_headers`: security headers for Netlify / Cloudflare Pages. The CSP hashes the inline style/script, so **re-generate the hashes if you edit the CSS or JS**.
+- `COMPLIANCE.md`: legal/security checklist and open items.
