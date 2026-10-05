@@ -3,11 +3,11 @@
 Not legal advice. Have an Indian lawyer review before launch.
 
 ## Done in this build
-- Privacy, Terms, Refund, Cookie pages; consent + age (18+) checkboxes (unticked by default); optional marketing consent separate.
+- Privacy, Terms, Refund, Cookie pages as overlays; 18+ and Terms/Privacy consent shown next to the WhatsApp button.
 - Cookie notice; only essential storage used; analytics hook loads only after consent (`loadOptional` in `index.html`).
 - Fonts self-hosted (OFL: Bricolage Grotesque, Instrument Sans, IBM Plex Mono); no Google requests. No session replay, no third-party embeds, no analytics.
 - No testimonials, logos or fake reviews; sample figures are labelled "Sample data"; third-party trademark disclaimer in footer.
-- Renewal terms shown next to every subscribe button and the form.
+- Pricing and signup form removed from the page for the one-screen design; Terms still describe plans. Update Terms §5 when pricing is shown elsewhere.
 - Accessibility: skip link, labels, visible focus, keyboard-friendly form, aria-live messages, reduced-motion, high contrast text.
 - Security: strict CSP (inline code allowed only by hash), headers in `_headers`, honeypot field, `.gitignore` for secrets, no secrets in repo.
 
