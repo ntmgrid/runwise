@@ -5,7 +5,7 @@ Not legal advice. Have an Indian lawyer review before launch.
 ## Done in this build
 - Privacy, Terms, Refund, Cookie pages; consent + age (18+) checkboxes (unticked by default); optional marketing consent separate.
 - Cookie notice; only essential storage used; analytics hook loads only after consent (`loadOptional` in `index.html`).
-- Fonts self-hosted (OFL); no Google requests. No session replay, no third-party embeds, no analytics.
+- Fonts self-hosted (OFL: Bricolage Grotesque, Instrument Sans, IBM Plex Mono); no Google requests. No session replay, no third-party embeds, no analytics.
 - No testimonials, logos or fake reviews; sample figures are labelled "Sample data"; third-party trademark disclaimer in footer.
 - Renewal terms shown next to every subscribe button and the form.
 - Accessibility: skip link, labels, visible focus, keyboard-friendly form, aria-live messages, reduced-motion, high contrast text.
