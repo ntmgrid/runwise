@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Runwise | Second brain for founders</title>
-<meta name="description" content="Wizu from Runwise lives in your WhatsApp: compliance dates, runway and investor updates, handled in one chat.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-RzY9R62L9Bstbc6LC9l7fJZjp2/cuOZtBeR4gKopgWg='; style-src 'sha256-6nQgiSt0ANKrQrspgYnCrbLxAtf/7FqM0Il8cxkLbw4='; img-src 'self' data:; font-src data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="description" content="Rise from Runwise lives in your WhatsApp: compliance dates, runway and investor updates, handled in one chat.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-RzY9R62L9Bstbc6LC9l7fJZjp2/cuOZtBeR4gKopgWg='; style-src 'sha256-pkp1TMp7panfOF0fWx80rHWGDGAjxVrXciS78zveHKU='; img-src 'self' data:; font-src data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#05080A">
 <!-- Font: Hanken Grotesk, SIL Open Font License 1.1 (openfontlicense.org). WhatsApp glyph: Phosphor Icons, MIT. -->
@@ -31,8 +31,8 @@ a{color:inherit}
 
 /* top bar */
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px}
-.logo{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none}
-.logo svg{width:26px;height:26px}
+.logo{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:24px;letter-spacing:-.04em;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:10px;display:block}
 .reach{font-size:14px;color:var(--ink2);text-decoration:none;padding:10px 0}
 .reach:hover{color:var(--ink)}
 
@@ -44,8 +44,10 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 .sub{margin:0 0 clamp(22px,3.4vh,36px);max-width:34ch;font-size:clamp(16px,1.35vw,20px);line-height:1.45;color:var(--ink2)}
 
 /* CTA */
-.cta{--tx:0px;--ty:0px;position:relative;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;font:inherit;font-weight:600;font-size:17px;line-height:1;padding:19px 30px 19px 24px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s,box-shadow .25s;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 18px 50px -12px rgba(74,222,158,.45)}
-.cta svg{width:24px;height:24px;color:#0E8F57;flex:none}
+.cta{--tx:0px;--ty:0px;position:relative;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;font:inherit;font-weight:600;font-size:17px;line-height:1;padding:10px 30px 10px 10px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s,box-shadow .25s;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 18px 50px -12px rgba(74,222,158,.45)}
+.cta .ico{flex:none;width:44px;height:44px;border-radius:50%;background:#06100C;color:#fff;display:grid;place-items:center;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.cta .ico svg{width:24px;height:24px;display:block}
+.cta:hover .ico{transform:rotate(-12deg) scale(1.06)}
 .cta:hover{background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 22px 60px -10px rgba(74,222,158,.6)}
 .cta:active{transform:translate(var(--tx),calc(var(--ty) + 1px)) scale(.98)}
 
@@ -88,7 +90,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 }
 @media (max-width:760px){
   .stage{padding-inline:18px}
-  .cta{width:100%;justify-content:center;font-size:16px;padding:18px 20px}
+  .cta{width:100%;justify-content:center;font-size:16px;padding:10px 20px 10px 10px}
   .base{font-size:12.5px}
   .cookie{bottom:auto;top:76px;right:18px}
 }
@@ -103,17 +105,17 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <div class="scrim" aria-hidden="true"></div>
 <div class="stage">
   <header class="top rise">
-    <a class="logo" href="#" aria-label="Runwise"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiM0QURFOUUiLz48cGF0aCBkPSJNMjIgNDdWMTdoMTNhMTAgMTAgMCAwIDEgMyAxOS42TDQ2IDQ3aC03LjVsLTYuOC05SDI4LjV2OXogTTI4LjUgMzFoNmE0IDQgMCAwIDAgMC04aC02eiIgZmlsbD0iIzA1MDgwQSIvPjwvc3ZnPg==" width="26" height="26" alt="">Runwise</a>
-    <a class="reach" href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>
+    <a class="logo" href="#" aria-label="Runwise"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiM0QURFOUUiLz48cGF0aCBkPSJNMjIgNDdWMTdoMTNhMTAgMTAgMCAwIDEgMyAxOS42TDQ2IDQ3aC03LjVsLTYuOC05SDI4LjV2OXogTTI4LjUgMzFoNmE0IDQgMCAwIDAgMC04aC02eiIgZmlsbD0iIzA1MDgwQSIvPjwvc3ZnPg==" width="36" height="36" alt="">Runwise</a>
+    <a class="reach" href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>
   </header>
   <main id="main" class="hero">
     <h1><span class="rise" data-d="1">Second brain</span><span class="rise" data-d="2">for <em>founders</em></span></h1>
-    <p class="sub rise" data-d="3">Wizu, from Runwise, lives in your WhatsApp. Compliance dates, runway and investor updates, handled in one chat.</p>
-    <div class="rise" data-d="4"><a class="cta" id="cta" href="https://wa.me/919778454998?text=Hi%20Wizu" target="_blank" rel="noopener"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg><span>Chat with Wizu on WhatsApp</span></a></div>
+    <p class="sub rise" data-d="3">Rise, from Runwise, lives in your WhatsApp. Compliance dates, runway and investor updates, handled in one chat.</p>
+    <div class="rise" data-d="4"><a class="cta" id="cta" href="https://wa.me/919778454998?text=Hi%20Rise" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg></span><span>Chat with Rise on WhatsApp</span></a></div>
   </main>
   <footer class="base rise" data-d="5">
     <ul aria-label="Legal"><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li><li><a href="#refund">Refunds</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#" id="cookie-settings">Cookie settings</a></li></ul>
-    <p>By messaging Wizu you confirm you are 18 or older and agree to our Terms and Privacy Policy. © <span id="yr">2026</span> Runwise</p>
+    <p>By messaging Rise you confirm you are 18 or older and agree to our Terms and Privacy Policy. © <span id="yr">2026</span> Runwise</p>
   </footer>
 </div>
 
@@ -129,7 +131,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <div class="callout"><strong>Draft for legal review.</strong> Items in <span class="ph">[brackets]</span> must be completed, and this document should be reviewed by a qualified Indian lawyer before launch.</div>
 <p>This Privacy Policy explains how <strong>Runwise</strong> ("Runwise", "we", "us"), operated by <span class="ph">[Registered legal name]</span> of <span class="ph">[Registered address, Karnataka, India]</span>, collects and uses your personal data when you visit our website or use our WhatsApp-based service. We follow the Digital Personal Data Protection Act, 2023 ("DPDP Act"), the Information Technology Act, 2000 and rules made under them.</p>
 <h2>1. Who is the Data Fiduciary</h2>
-<p>For the data described here, Runwise is the "Data Fiduciary". Contact: <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>, <a href="tel:+919778454998">+91 97784 54998</a>.</p>
+<p>For the data described here, Runwise is the "Data Fiduciary". Contact: <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>, <a href="tel:+919778454998">+91 97784 54998</a>.</p>
 <h2>2. What we collect</h2>
 <ul>
 <li><strong>Contact details:</strong> name, company name, email address, WhatsApp/phone number, chosen plan.</li>
@@ -164,7 +166,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <h2>7. Security</h2>
 <p>We use reasonable safeguards, including encryption in transit, access controls and least-privilege access. No system is perfectly secure. If a personal data breach affects you, we will notify you and the Data Protection Board of India as required by law.</p>
 <h2>8. Your rights</h2>
-<p>Under the DPDP Act you may: access a summary of your personal data and how it is processed; ask us to correct, complete or update it; ask us to erase it; nominate another person to exercise your rights if you die or become incapacitated; and use our grievance process below. Email <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a> and we will respond within a reasonable time and in any case within the period prescribed by law.</p>
+<p>Under the DPDP Act you may: access a summary of your personal data and how it is processed; ask us to correct, complete or update it; ask us to erase it; nominate another person to exercise your rights if you die or become incapacitated; and use our grievance process below. Email <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a> and we will respond within a reasonable time and in any case within the period prescribed by law.</p>
 <h2>9. Children</h2>
 <p>Runwise is for adults running a business. We do not knowingly collect data from anyone under 18, and by messaging us you confirm you are 18 or older. If you believe a child has given us data, contact us and we will delete it.</p>
 <h2>10. Cookies and analytics</h2>
@@ -172,7 +174,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <h2>11. Marketing emails</h2>
 <p>Marketing emails are sent only with your opt-in, include an unsubscribe link and our postal address (<span class="ph">[Registered address, Karnataka, India]</span>).</p>
 <h2>12. Grievance Officer</h2>
-<p>Grievance Officer: <span class="ph">[Name of Grievance Officer]</span>, Runwise. Email: <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>. We aim to acknowledge complaints within 48 hours and resolve them within 15 days. If you are unsatisfied, you may complain to the Data Protection Board of India once it is operational.</p>
+<p>Grievance Officer: <span class="ph">[Name of Grievance Officer]</span>, Runwise. Email: <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>. We aim to acknowledge complaints within 48 hours and resolve them within 15 days. If you are unsatisfied, you may complain to the Data Protection Board of India once it is operational.</p>
 <h2>13. Changes</h2>
 <p>We may update this policy. Material changes will be shown on this page with a new date and, where required, notified to you.</p>
 
@@ -198,7 +200,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <li><strong>Chief of Staff:</strong> ₹4,999 per month or ₹49,990 per year.</li>
 </ul>
 <p>Yearly plans include two months free compared with twelve monthly payments. Prices are in Indian rupees; <span class="ph">[state whether GST is included or added]</span>.</p>
-<p><strong>Automatic renewal:</strong> Subscriptions renew automatically at the end of each billing period (monthly or yearly) at the then-current price for your plan, until you cancel. We will tell you before any price change takes effect. You can cancel at any time by messaging us on WhatsApp or emailing <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>; cancellation takes effect at the end of the current paid period. <span class="ph">[Confirm renewal reminder emails, and recurring-payment rules (e.g. RBI e-mandate) with your payment provider]</span></p>
+<p><strong>Automatic renewal:</strong> Subscriptions renew automatically at the end of each billing period (monthly or yearly) at the then-current price for your plan, until you cancel. We will tell you before any price change takes effect. You can cancel at any time by messaging us on WhatsApp or emailing <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>; cancellation takes effect at the end of the current paid period. <span class="ph">[Confirm renewal reminder emails, and recurring-payment rules (e.g. RBI e-mandate) with your payment provider]</span></p>
 <h2>6. Refunds</h2>
 <p>See our <a href="#refund">Refund Policy</a>.</p>
 <h2>7. Your responsibilities</h2>
@@ -213,7 +215,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <h2>9. Intellectual property</h2>
 <p>Runwise and its software, branding and content belong to us or our licensors. We grant you a limited, non-exclusive, non-transferable right to use the Service while subscribed. You keep ownership of your data and grant us permission to process it to provide the Service.</p>
 <h2>10. Copyright complaints</h2>
-<p>If you believe content on our site infringes your copyright, email <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a> with identification of the work, the location of the material, your contact details and a statement that you are the owner or authorised to act. We will review promptly and remove infringing material where appropriate. <span class="ph">[If you serve US users: register a DMCA designated agent with the US Copyright Office and list the agent here]</span></p>
+<p>If you believe content on our site infringes your copyright, email <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a> with identification of the work, the location of the material, your contact details and a statement that you are the owner or authorised to act. We will review promptly and remove infringing material where appropriate. <span class="ph">[If you serve US users: register a DMCA designated agent with the US Copyright Office and list the agent here]</span></p>
 <h2>11. Disclaimer and limitation of liability</h2>
 <p>The Service is provided "as is" and "as available". To the maximum extent permitted by law, we disclaim implied warranties and are not liable for indirect or consequential losses, lost profits or data loss. Our total liability for any claim is limited to the fees you paid us in the 12 months before the claim. Nothing excludes liability that cannot be excluded by law, including your rights under the Consumer Protection Act, 2019.</p>
 <h2>12. Suspension and termination</h2>
@@ -223,7 +225,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <h2>14. Changes</h2>
 <p>We may update these Terms. We will post the new date here and notify you of material changes. Continued use after changes means you accept them.</p>
 <h2>15. Contact</h2>
-<p><span class="ph">[Registered legal name]</span>, <span class="ph">[Registered address, Karnataka, India]</span>. Email <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>; phone <a href="tel:+919778454998">+91 97784 54998</a>.</p>
+<p><span class="ph">[Registered legal name]</span>, <span class="ph">[Registered address, Karnataka, India]</span>. Email <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>; phone <a href="tel:+919778454998">+91 97784 54998</a>.</p>
 
 </article></div></section>
 <section class="legal" id="refund" role="dialog" aria-modal="true" aria-label="Refund Policy" tabindex="-1"><div class="inner"><a class="back" href="#">← Back to Runwise</a><article>
@@ -232,7 +234,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <p class="meta">Last updated: 5 October 2026</p>
 <div class="callout"><strong>Draft policy: business decision needed.</strong> The windows below are suggested defaults. Replace them with the policy you actually want to honour, then have it reviewed by a lawyer.</div>
 <h2>Cancelling</h2>
-<p>You can cancel anytime by messaging us on WhatsApp or emailing <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>. Your plan stays active until the end of the period you've paid for, and will not renew.</p>
+<p>You can cancel anytime by messaging us on WhatsApp or emailing <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>. Your plan stays active until the end of the period you've paid for, and will not renew.</p>
 <h2>Monthly plans</h2>
 <p>Charges for a month already started are non-refundable. <span class="ph">[Suggested: refund requests made within 7 days of your first payment are honoured in full]</span></p>
 <h2>Yearly plans</h2>
@@ -244,7 +246,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <h2>How refunds are paid</h2>
 <p>Approved refunds go back to the original payment method within <span class="ph">[5-10]</span> business days, subject to your bank or payment provider.</p>
 <h2>Contact</h2>
-<p>Email <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a> or WhatsApp / call <a href="tel:+919778454998">+91 97784 54998</a>.</p>
+<p>Email <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a> or WhatsApp / call <a href="tel:+919778454998">+91 97784 54998</a>.</p>
 
 </article></div></section>
 <section class="legal" id="cookies" role="dialog" aria-modal="true" aria-label="Cookie Policy" tabindex="-1"><div class="inner"><a class="back" href="#">← Back to Runwise</a><article>
@@ -259,7 +261,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <p>If we later add analytics or any non-essential cookie, we will update this page and ask for your consent first. Those tools will not load until you accept. You can change your choice at any time using "Cookie settings" in the footer.</p>
 <h2>Managing storage</h2>
 <p>You can clear or block cookies and site data in your browser settings. Doing so will just make the cookie notice appear again.</p>
-<p>Questions? <a href="mailto:ntmgrid@gmail.com">ntmgrid@gmail.com</a>. See also our <a href="#privacy">Privacy Policy</a>.</p>
+<p>Questions? <a href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>. See also our <a href="#privacy">Privacy Policy</a>.</p>
 
 </article></div></section>
 
