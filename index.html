@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Runwise | Second brain for founders</title>
 <meta name="description" content="Rise from Runwise lives in your WhatsApp: compliance dates, runway and investor updates, handled in one chat.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-RzY9R62L9Bstbc6LC9l7fJZjp2/cuOZtBeR4gKopgWg='; style-src 'sha256-pkp1TMp7panfOF0fWx80rHWGDGAjxVrXciS78zveHKU='; img-src 'self' data:; font-src data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-IjRZhTW+MgvOxDmwH8eJSp+Zrd7y35Lj3ixYn6vJIpw='; style-src 'sha256-yGoYHCM9y+/YRsaIu1vFnrh4XaE2g3WQTEBgsXyQCJk='; img-src 'self' data:; font-src data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#05080A">
 <!-- Font: Hanken Grotesk, SIL Open Font License 1.1 (openfontlicense.org). WhatsApp glyph: Phosphor Icons, MIT. -->
@@ -44,10 +44,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 .sub{margin:0 0 clamp(22px,3.4vh,36px);max-width:34ch;font-size:clamp(16px,1.35vw,20px);line-height:1.45;color:var(--ink2)}
 
 /* CTA */
-.cta{--tx:0px;--ty:0px;position:relative;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;font:inherit;font-weight:600;font-size:17px;line-height:1;padding:10px 30px 10px 10px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s,box-shadow .25s;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 18px 50px -12px rgba(74,222,158,.45)}
-.cta .ico{flex:none;width:44px;height:44px;border-radius:50%;background:#06100C;color:#fff;display:grid;place-items:center;transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.cta .ico svg{width:24px;height:24px;display:block}
-.cta:hover .ico{transform:rotate(-12deg) scale(1.06)}
+.cta{--tx:0px;--ty:0px;position:relative;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;font:inherit;font-weight:600;font-size:17px;line-height:1;padding:20px 36px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s,box-shadow .25s;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 18px 50px -12px rgba(74,222,158,.45)}
 .cta:hover{background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 22px 60px -10px rgba(74,222,158,.6)}
 .cta:active{transform:translate(var(--tx),calc(var(--ty) + 1px)) scale(.98)}
 
@@ -90,7 +87,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 }
 @media (max-width:760px){
   .stage{padding-inline:18px}
-  .cta{width:100%;justify-content:center;font-size:16px;padding:10px 20px 10px 10px}
+  .cta{width:100%;justify-content:center;font-size:16px;padding:19px 20px}
   .base{font-size:12.5px}
   .cookie{bottom:auto;top:76px;right:18px}
 }
@@ -98,6 +95,24 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 @media (forced-colors:active){.cta{border:1px solid CanvasText}}
 [data-d="1"]{--d:.15s}[data-d="2"]{--d:.3s}[data-d="3"]{--d:.5s}[data-d="4"]{--d:.7s}[data-d="5"]{--d:.9s}
 .top.rise{--d:0s}
+
+/* one-time consent gate (z: cookie 30 < gate 40 < legal 50) */
+.gate{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:18px;background:rgba(5,8,10,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.gate[hidden]{display:none}
+.gate-card{width:min(520px,100%);padding:clamp(22px,4vw,34px);background:rgba(11,18,16,.92);border:1px solid var(--line);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 40px 100px -20px rgba(0,0,0,.8)}
+.gate-card h2{margin:0 0 6px;font-size:clamp(24px,3.4vw,30px);line-height:1.1;letter-spacing:-.03em;font-weight:600}
+.gate-lead{margin:0 0 20px;color:var(--ink2);font-size:15px}
+.gate-check{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:20px}
+.gate-check input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--accent)}
+.gate-check label{font-size:14.5px;line-height:1.5;color:var(--ink)}
+.gate-check a{color:var(--accent)}
+.gate-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.gate-go{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font-weight:600;font-size:16px;padding:16px 28px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transition:opacity .2s,background .2s}
+.gate-go[aria-disabled="true"]{opacity:.35;cursor:not-allowed}
+.gate-go:not([aria-disabled="true"]):hover{background:#fff}
+.gate-cancel{font:inherit;font-size:15px;color:var(--ink2);background:none;border:0;padding:14px 12px;cursor:pointer;min-height:44px}
+.gate-cancel:hover{color:var(--ink)}
+@media (max-width:760px){.gate-go{width:100%}.gate-actions{flex-direction:column;align-items:stretch}}
 </style>
 </head>
 <body>
@@ -111,17 +126,32 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
   <main id="main" class="hero">
     <h1><span class="rise" data-d="1">Second brain</span><span class="rise" data-d="2">for <em>founders</em></span></h1>
     <p class="sub rise" data-d="3">Rise, from Runwise, lives in your WhatsApp. Compliance dates, runway and investor updates, handled in one chat.</p>
-    <div class="rise" data-d="4"><a class="cta" id="cta" href="https://wa.me/919778454998?text=Hi%20Rise" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg></span><span>Chat with Rise on WhatsApp</span></a></div>
+    <div class="rise" data-d="4"><a class="cta" id="cta" href="https://wa.me/919778454998?text=Hi%20Rise" target="_blank" rel="noopener"><span>Chat with Rise on WhatsApp</span></a></div>
   </main>
   <footer class="base rise" data-d="5">
     <ul aria-label="Legal"><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li><li><a href="#refund">Refunds</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#" id="cookie-settings">Cookie settings</a></li></ul>
-    <p>By messaging Rise you confirm you are 18 or older and agree to our Terms and Privacy Policy. © <span id="yr">2026</span> Runwise</p>
+    <p>Runwise is a reminder and information service, not legal, tax or investment advice. © <span id="yr">2026</span> Runwise</p>
   </footer>
 </div>
 
 <div class="cookie" id="cookie" role="region" aria-label="Cookie notice">
   <p>This site stores one setting, your answer here. No ads, no tracking. We will ask before adding analytics. <a href="#cookies">Details</a></p>
   <div><button class="p" type="button" data-cookie="accepted">Accept</button><button type="button" data-cookie="essential">Essential only</button></div>
+</div>
+
+<div class="gate" id="gate" hidden>
+  <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gate-h" tabindex="-1">
+    <h2 id="gate-h">Before you chat with Rise</h2>
+    <p class="gate-lead">One quick confirmation. We will only ask once.</p>
+    <div class="gate-check">
+      <input type="checkbox" id="gate-ok">
+      <label for="gate-ok">I am 18 or older. I agree to the <a href="#terms">Terms and Conditions</a> and the <a href="#privacy">Privacy Policy</a>, and I consent to Runwise collecting and using my WhatsApp number and the messages and data I share, to provide the service. Runwise collects only what it needs and never sells it.</label>
+    </div>
+    <div class="gate-actions">
+      <a class="gate-go" id="gate-go" href="https://wa.me/919778454998?text=Hi%20Rise" target="_blank" rel="noopener" aria-disabled="true">Continue to WhatsApp</a>
+      <button type="button" class="gate-cancel" id="gate-cancel">Not now</button>
+    </div>
+  </div>
 </div>
 
 <section class="legal" id="privacy" role="dialog" aria-modal="true" aria-label="Privacy Policy" tabindex="-1"><div class="inner"><a class="back" href="#">← Back to Runwise</a><article>
@@ -256,6 +286,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <p>This site uses only <strong>essential</strong> browser storage today. We do not use advertising cookies, analytics, session-replay tools or third-party embeds, and our fonts are hosted on our own server (so no request goes to Google or any font provider).</p>
 <table><thead><tr><th>Name</th><th>Type</th><th>Purpose</th><th>Duration</th></tr></thead><tbody>
 <tr><td><code>runwise_cookie_choice</code></td><td>Essential (local storage)</td><td>Remembers your answer to the cookie notice</td><td>Until you clear your browser data</td></tr>
+<tr><td><code>runwise_consent_v1</code></td><td>Essential (local storage)</td><td>Remembers that you agreed to the Terms and Privacy Policy, so we only ask once</td><td>Until you clear your browser data</td></tr>
 </tbody></table>
 <h2>If this changes</h2>
 <p>If we later add analytics or any non-essential cookie, we will update this page and ask for your consent first. Those tools will not load until you accept. You can change your choice at any time using "Cookie settings" in the footer.</p>
@@ -346,13 +377,44 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
     cta.addEventListener("pointerleave", function () { cta.style.setProperty("--tx", "0px"); cta.style.setProperty("--ty", "0px"); });
   }
 
+  /* ---------- One-time consent before opening WhatsApp ---------- */
+  var CKEY = "runwise_consent_v1", gate = document.getElementById("gate"), ok = document.getElementById("gate-ok"), go = document.getElementById("gate-go");
+  function hasConsent() { try { return !!localStorage.getItem(CKEY); } catch (e) { return false; } }
+  function saveConsent() { try { localStorage.setItem(CKEY, new Date().toISOString()); } catch (e) {} }
+  function closeGate() { gate.hidden = true; if (cta) cta.focus(); }
+  if (cta && gate && ok && go) {
+    cta.addEventListener("click", function (e) {
+      if (hasConsent()) return;                 // already agreed once: go straight to WhatsApp
+      e.preventDefault();
+      ok.checked = false; go.setAttribute("aria-disabled", "true");
+      gate.hidden = false; ok.focus();
+    });
+    ok.addEventListener("change", function () { go.setAttribute("aria-disabled", ok.checked ? "false" : "true"); });
+    go.addEventListener("click", function (e) {
+      if (go.getAttribute("aria-disabled") === "true") { e.preventDefault(); ok.focus(); return; }
+      saveConsent(); gate.hidden = true;        // default action opens WhatsApp in a new tab
+    });
+    document.getElementById("gate-cancel").addEventListener("click", closeGate);
+    gate.addEventListener("click", function (e) { if (e.target === gate) closeGate(); });
+    gate.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var f = [ok, go, document.getElementById("gate-cancel")].concat([].slice.call(gate.querySelectorAll("a[href^='#']")));
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
   /* ---------- Legal overlays: focus in, Escape out ---------- */
   function openLegal() {
     var id = location.hash.slice(1), el = id && document.getElementById(id);
     if (el && el.classList.contains("legal")) { el.scrollTop = 0; el.focus({ preventScroll: true }); }
   }
   window.addEventListener("hashchange", openLegal); openLegal();
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && document.querySelector(".legal:target")) location.hash = ""; });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (document.querySelector(".legal:target")) location.hash = ""; else if (gate && !gate.hidden) closeGate();
+  });
 
   /* ---------- Cookie notice (one preference in localStorage) ---------- */
   var KEY = "runwise_cookie_choice", banner = document.getElementById("cookie");
