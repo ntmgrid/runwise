@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Runwise | AI second brain for everyone</title>
 <meta name="description" content="Runwise is an AI second brain that lives in your WhatsApp. It keeps your dates, tasks, money and updates straight.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-MQj/IxJDMRtpM4mpTnxppFSmWQCoceha5eCdZvZUEAk='; style-src 'sha256-U1vJlpdDzxTdKovzc+Jpgjih9NyeucXJdKYXXiHqPpc='; img-src 'self' data:; font-src data:; connect-src 'self' ; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-MQj/IxJDMRtpM4mpTnxppFSmWQCoceha5eCdZvZUEAk='; style-src 'sha256-OqwGT71Bu50I45xlurAyQ/e62Ttahn1tS3K0vJDSIjA='; img-src 'self' data:; font-src data:; connect-src 'self' ; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#05080A">
 <!-- Font: Hanken Grotesk, SIL Open Font License 1.1 (openfontlicense.org). WhatsApp glyph: Phosphor Icons, MIT. -->
@@ -44,7 +44,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 .sub{margin:0 0 clamp(22px,3.4vh,36px);max-width:34ch;font-size:clamp(16px,1.35vw,20px);line-height:1.45;color:var(--ink2)}
 
 /* CTA */
-.cta{--tx:0px;--ty:0px;position:relative;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;font:inherit;font-weight:600;font-size:17px;line-height:1;padding:20px 36px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s,box-shadow .25s;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 18px 50px -12px rgba(74,222,158,.45)}
+.cta{--tx:0px;--ty:0px;border:0;cursor:pointer;position:relative;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;font:inherit;font-weight:600;font-size:17px;line-height:1;padding:20px 36px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s,box-shadow .25s;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 18px 50px -12px rgba(74,222,158,.45)}
 .cta:hover{background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 22px 60px -10px rgba(74,222,158,.6)}
 .cta:active{transform:translate(var(--tx),calc(var(--ty) + 1px)) scale(.98)}
 
@@ -184,7 +184,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
   <main id="main" class="hero">
     <h1><span class="rise" data-d="1">AI second brain</span><span class="rise" data-d="2">for <em>everyone</em></span></h1>
     <p class="sub rise" data-d="3">Runwise lives in your WhatsApp. It keeps your dates, tasks, money and updates straight, so you do not have to.</p>
-    <div class="rise" data-d="4"><a class="cta" id="cta" data-chat href="https://wa.me/919778454998?text=Hi%20Runwise" target="_blank" rel="noopener"><span>Chat with Runwise</span></a></div>
+    <div class="rise" data-d="4"><button type="button" class="cta" id="cta" data-chat><span>Chat with Runwise</span></button></div>
   </main>
   <footer class="base rise" data-d="5">
     <ul aria-label="Legal"><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li><li><a href="#refund">Refunds</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#" id="cookie-settings">Cookie settings</a></li></ul>
@@ -220,7 +220,6 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
           <button type="button" class="gate-cancel" id="gate-cancel">Not now</button>
         </div>
       </form>
-      <p class="gate-alt">Prefer to message first? <a href="https://wa.me/919778454998?text=Hi%20Runwise" target="_blank" rel="noopener">Open WhatsApp</a></p>
     </div>
     <div id="gate-done" hidden>
       <h2 id="gate-done-h">Check your WhatsApp</h2>
@@ -249,7 +248,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
     <div class="plan3"><h3>Chief of Staff</h3><p class="pr"><b>₹4,999</b> a month</p><p class="pr2">or ₹49,990 a year</p><ul><li>Everything in Founder</li><li>Up to 3 companies</li><li>Unlimited investor updates</li><li>Priority WhatsApp support</li></ul></div>
   </div>
   <p class="plan-note">Yearly plans include two months free. Plans renew automatically until you cancel, and you can cancel anytime. Prices in Indian rupees. <span class="ph">GST: confirm if included or added</span> See the <a href="#terms">Terms</a> and <a href="#refund">Refund Policy</a>.</p>
-  <a class="cta cta-inline" data-chat href="https://wa.me/919778454998?text=Hi%20Runwise" target="_blank" rel="noopener"><span>Chat with Runwise</span></a>
+  <button type="button" class="cta cta-inline" data-chat><span>Chat with Runwise</span></button>
 </div></section>
 <section class="legal" id="privacy" role="dialog" aria-modal="true" aria-label="Privacy Policy" tabindex="-1"><div class="inner"><a class="back" href="#">← Back to Runwise</a><article>
 
