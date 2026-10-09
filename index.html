@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Runwise | Second brain for founders</title>
-<meta name="description" content="Rise from Runwise lives in your WhatsApp: compliance dates, runway and investor updates, handled in one chat.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-IjRZhTW+MgvOxDmwH8eJSp+Zrd7y35Lj3ixYn6vJIpw='; style-src 'sha256-RxfUUIuGnQjHe5NK2ay8ybhRCbEAErLpVCwIgTIMAJA='; img-src 'self' data:; font-src data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<title>Runwise | AI second brain for everyone</title>
+<meta name="description" content="Runwise is an AI second brain that lives in your WhatsApp. It keeps your dates, tasks, money and updates straight.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-MQj/IxJDMRtpM4mpTnxppFSmWQCoceha5eCdZvZUEAk='; style-src 'sha256-U1vJlpdDzxTdKovzc+Jpgjih9NyeucXJdKYXXiHqPpc='; img-src 'self' data:; font-src data:; connect-src 'self' ; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#05080A">
 <!-- Font: Hanken Grotesk, SIL Open Font License 1.1 (openfontlicense.org). WhatsApp glyph: Phosphor Icons, MIT. -->
@@ -37,8 +37,9 @@ a{color:inherit}
 
 /* hero */
 .hero{align-self:end;padding-bottom:clamp(20px,4vh,48px);max-width:1500px}
-h1{margin:0 0 clamp(18px,3vh,32px);font-weight:500;font-size:clamp(46px,10.6vw,184px);line-height:.96;letter-spacing:-.05em;text-wrap:balance}
+h1{margin:0 0 clamp(18px,3vh,32px);font-weight:500;font-size:clamp(40px,10vw,176px);line-height:.96;letter-spacing:-.05em;text-wrap:balance}
 h1 span{display:block}
+h1 span:last-child{padding-bottom:.1em;margin-bottom:-.1em}
 h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;padding-bottom:.06em}
 .sub{margin:0 0 clamp(22px,3.4vh,36px);max-width:34ch;font-size:clamp(16px,1.35vw,20px);line-height:1.45;color:var(--ink2)}
 
@@ -95,23 +96,73 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 [data-d="1"]{--d:.15s}[data-d="2"]{--d:.3s}[data-d="3"]{--d:.5s}[data-d="4"]{--d:.7s}[data-d="5"]{--d:.9s}
 .top.rise{--d:0s}
 
-/* one-time consent gate (z: cookie 30 < gate 40 < legal 50) */
+
+[hidden]{display:none!important}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+
+/* header: solutions dropdown */
+.top-l{display:flex;align-items:center;gap:clamp(18px,3vw,40px)}
+.sol{position:relative}
+.sol-btn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:15px;font-weight:500;color:var(--ink);background:none;border:0;padding:10px 4px;min-height:44px;cursor:pointer}
+.sol-btn svg{width:12px;height:12px;transition:transform .25s}
+.sol-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.sol-btn:hover{color:var(--accent)}
+.sol-menu{position:absolute;top:calc(100% + 8px);left:-12px;z-index:35;min-width:280px;margin:0;padding:8px;list-style:none;background:rgba(11,18,16,.9);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -20px rgba(0,0,0,.7)}
+.sol-menu a{display:block;padding:12px 14px;border-radius:10px;text-decoration:none}
+.sol-menu a:hover,.sol-menu a:focus-visible{background:rgba(255,255,255,.07)}
+.sol-menu b{display:block;font-weight:600;font-size:16px}
+.sol-menu span{display:block;font-size:13.5px;color:var(--ink2)}
+
+/* founders panel */
+.legal .inner.wide{max-width:1040px}
+.legal h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em}
+.sol-lead{font-size:clamp(18px,2vw,22px);color:var(--ink2)!important;margin:0 0 32px;max-width:36ch}
+.feat-list{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.feat-list li{padding:20px 0;border-top:1px solid var(--line)}
+.feat-list h2{margin:0 0 6px;font-size:20px}
+.feat-list p{margin:0;font-size:15.5px}
+.plans-h{margin-top:0!important}
+.plans3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.plan3{padding:26px 24px;border-right:1px solid var(--line)}
+.plan3:last-child{border-right:0}
+.plan3.rec{background:rgba(237,239,234,.08)}
+.plan3 h3{margin:0 0 10px;font-size:22px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.plan3 .pr{margin:0;color:var(--ink2)}
+.plan3 .pr b{font-size:34px;font-weight:600;letter-spacing:-.04em;color:var(--ink)}
+.plan3 .pr2{margin:0 0 14px;font-size:14px}
+.plan3 ul{margin:0;padding-left:18px}
+.plan3 li{font-size:15px;margin-bottom:.35em}
+.plan-note{font-size:13.5px;margin:16px 0 28px}
+.cta-inline{margin-bottom:8px}
+@media (max-width:760px){.feat-list{grid-template-columns:1fr}.plans3{grid-template-columns:1fr}.plan3{border-right:0;border-bottom:1px solid var(--line)}.plan3:last-child{border-bottom:0}.sol-menu{min-width:min(280px,calc(100vw - 36px))}}
+
+/* number prompt (z: cookie 30 < gate 40 < legal 50) */
 .gate{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:18px;background:rgba(5,8,10,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.gate[hidden]{display:none}
-.gate-card{width:min(520px,100%);padding:clamp(22px,4vw,34px);background:rgba(11,18,16,.92);border:1px solid var(--line);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 40px 100px -20px rgba(0,0,0,.8)}
+.gate-card{width:min(520px,100%);max-height:calc(100dvh - 36px);overflow:auto;padding:clamp(22px,4vw,34px);background:rgba(11,18,16,.92);border:1px solid var(--line);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 40px 100px -20px rgba(0,0,0,.8)}
 .gate-card h2{margin:0 0 6px;font-size:clamp(24px,3.4vw,30px);line-height:1.1;letter-spacing:-.03em;font-weight:600}
-.gate-lead{margin:0 0 20px;color:var(--ink2);font-size:15px}
-.gate-check{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:20px}
+.gate-lead{margin:0 0 18px;color:var(--ink2);font-size:15px}
+.gate-preview{margin:0 0 16px;padding:10px 14px;border:1px solid var(--warn);border-radius:10px;color:var(--warn);font-size:13.5px}
+.gate-field{margin-bottom:16px}
+.gate-field label{display:block;font-weight:600;font-size:15px;margin-bottom:8px}
+.gate-field input{width:100%;font:inherit;font-size:17px;color:var(--ink);background:rgba(255,255,255,.05);border:1px solid rgba(237,239,234,.34);border-radius:12px;padding:14px 16px;min-height:52px}
+.gate-field input::placeholder{color:#8F9A94}
+.gate-field input:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:transparent}
+.gate-field input[aria-invalid="true"]{border-color:var(--warn)}
+.gate-err{margin:8px 0 0;color:var(--warn);font-size:14px}
+.gate-check{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:18px}
 .gate-check input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--accent)}
-.gate-check label{font-size:14.5px;line-height:1.5;color:var(--ink)}
-.gate-check a{color:var(--accent)}
+.gate-check label{font-size:14px;line-height:1.5;color:var(--ink)}
+.gate-check a,.gate-agreed a,.gate-alt a{color:var(--accent)}
+.gate-agreed{margin:0 0 18px;font-size:13.5px;color:var(--ink2)}
 .gate-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.gate-go{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font-weight:600;font-size:16px;padding:16px 28px;border-radius:999px;background:var(--ink);color:var(--on-light);text-decoration:none;transition:opacity .2s,background .2s}
-.gate-go[aria-disabled="true"]{opacity:.35;cursor:not-allowed}
-.gate-go:not([aria-disabled="true"]):hover{background:#fff}
+.gate-go{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:inherit;font-weight:600;font-size:16px;padding:16px 28px;border:0;border-radius:999px;background:var(--ink);color:var(--on-light);cursor:pointer;transition:opacity .2s,background .2s}
+.gate-go:hover{background:#fff}
+.gate-go[disabled]{opacity:.45;cursor:progress}
 .gate-cancel{font:inherit;font-size:15px;color:var(--ink2);background:none;border:0;padding:14px 12px;cursor:pointer;min-height:44px}
 .gate-cancel:hover{color:var(--ink)}
+.gate-alt{margin:18px 0 0;font-size:13.5px;color:var(--ink2)}
 @media (max-width:760px){.gate-go{width:100%}.gate-actions{flex-direction:column;align-items:stretch}}
+.legal .feat-list h2,.legal .plan3 h3{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -119,13 +170,21 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 <div class="scrim" aria-hidden="true"></div>
 <div class="stage">
   <header class="top rise">
-    <a class="logo" href="#" aria-label="Runwise">Runwise</a>
+    <div class="top-l">
+      <a class="logo" href="#" aria-label="Runwise">Runwise</a>
+      <div class="sol">
+        <button class="sol-btn" id="sol-btn" type="button" aria-expanded="false" aria-controls="sol-menu">Solutions<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></svg></button>
+        <ul class="sol-menu" id="sol-menu" hidden>
+          <li><a href="#founders"><b>Founders</b><span>Compliance, runway and investor updates</span></a></li>
+        </ul>
+      </div>
+    </div>
     <a class="reach" href="mailto:hey486hey@gmail.com">hey486hey@gmail.com</a>
   </header>
   <main id="main" class="hero">
-    <h1><span class="rise" data-d="1">Second brain</span><span class="rise" data-d="2">for <em>founders</em></span></h1>
-    <p class="sub rise" data-d="3">Rise, from Runwise, lives in your WhatsApp. Compliance dates, runway and investor updates, handled in one chat.</p>
-    <div class="rise" data-d="4"><a class="cta" id="cta" href="https://wa.me/919778454998?text=Hi%20Rise" target="_blank" rel="noopener"><span>Chat with Rise on WhatsApp</span></a></div>
+    <h1><span class="rise" data-d="1">AI second brain</span><span class="rise" data-d="2">for <em>everyone</em></span></h1>
+    <p class="sub rise" data-d="3">Runwise lives in your WhatsApp. It keeps your dates, tasks, money and updates straight, so you do not have to.</p>
+    <div class="rise" data-d="4"><a class="cta" id="cta" data-chat href="https://wa.me/919778454998?text=Hi%20Runwise" target="_blank" rel="noopener"><span>Chat with Runwise</span></a></div>
   </main>
   <footer class="base rise" data-d="5">
     <ul aria-label="Legal"><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li><li><a href="#refund">Refunds</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#" id="cookie-settings">Cookie settings</a></li></ul>
@@ -140,19 +199,58 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 
 <div class="gate" id="gate" hidden>
   <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gate-h" tabindex="-1">
-    <h2 id="gate-h">Before you chat with Rise</h2>
-    <p class="gate-lead">One quick confirmation. We will only ask once.</p>
-    <div class="gate-check">
-      <input type="checkbox" id="gate-ok">
-      <label for="gate-ok">I am 18 or older. I agree to the <a href="#terms">Terms and Conditions</a> and the <a href="#privacy">Privacy Policy</a>, and I consent to Runwise collecting and using my WhatsApp number and the messages and data I share, to provide the service. Runwise collects only what it needs and never sells it.</label>
+    <div id="gate-main">
+      <h2 id="gate-h">Let Runwise text you</h2>
+      <p class="gate-lead">Enter your WhatsApp number. Runwise will message you there.</p>
+      <p class="gate-preview" id="gate-preview" hidden>Preview mode: this is not connected yet, so nothing is sent or saved.</p>
+      <form id="gate-form" novalidate>
+        <div class="gate-field">
+          <label for="gate-phone">WhatsApp number</label>
+          <input id="gate-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" maxlength="20" required aria-describedby="gate-err">
+          <p class="gate-err" id="gate-err" role="alert" hidden></p>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="gate-web">Leave this empty</label><input id="gate-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="gate-check" id="gate-consent">
+          <input type="checkbox" id="gate-ok">
+          <label for="gate-ok">I am 18 or older. I agree to the <a href="#terms">Terms and Conditions</a> and the <a href="#privacy">Privacy Policy</a>, and I consent to Runwise collecting and using my WhatsApp number and the messages and data I share, to send me WhatsApp messages and provide the service. Runwise collects only what it needs and never sells it.</label>
+        </div>
+        <p class="gate-agreed" id="gate-agreed" hidden>You have already agreed to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+        <div class="gate-actions">
+          <button class="gate-go" id="gate-go" type="submit">Text me on WhatsApp</button>
+          <button type="button" class="gate-cancel" id="gate-cancel">Not now</button>
+        </div>
+      </form>
+      <p class="gate-alt">Prefer to message first? <a href="https://wa.me/919778454998?text=Hi%20Runwise" target="_blank" rel="noopener">Open WhatsApp</a></p>
     </div>
-    <div class="gate-actions">
-      <a class="gate-go" id="gate-go" href="https://wa.me/919778454998?text=Hi%20Rise" target="_blank" rel="noopener" aria-disabled="true">Continue to WhatsApp</a>
-      <button type="button" class="gate-cancel" id="gate-cancel">Not now</button>
+    <div id="gate-done" hidden>
+      <h2 id="gate-done-h">Check your WhatsApp</h2>
+      <p class="gate-lead" id="gate-done-p">Runwise will message you shortly.</p>
+      <div class="gate-actions"><button type="button" class="gate-go" id="gate-close">Done</button></div>
     </div>
   </div>
 </div>
 
+<section class="legal" id="founders" role="dialog" aria-modal="true" aria-label="Runwise for founders" tabindex="-1"><div class="inner wide">
+  <a class="back" href="#">← Back to Runwise</a>
+  <h1>Runwise for <em>founders</em></h1>
+  <p class="sol-lead">Compliance, cash and investor updates, handled in one WhatsApp chat.</p>
+  <ul class="feat-list">
+    <li><h2>Compliance reminders</h2><p>GST returns, TDS, professional tax, MCA filings and the auditor appointment, set up from your company type and state.</p></li>
+    <li><h2>Tasks, calendar and voice notes</h2><p>Send a voice note or message. Runwise asks for the missing time or place, then adds it to your calendar.</p></li>
+    <li><h2>Runway prediction</h2><p>Connect accounting, payments and billing tools or a sheet. Runwise estimates your months of runway.</p></li>
+    <li><h2>Investor updates</h2><p>Drop notes in the chat as things happen. Runwise sends the update to investors, advisors and stakeholders on your schedule.</p></li>
+    <li><h2>News and competitors</h2><p>Startup, VC and government news, plus public news about your competitors.</p></li>
+    <li><h2>Reminders to your CA or CS</h2><p>Due-date reminders go straight to your accountant or company secretary.</p></li>
+  </ul>
+  <h2 class="plans-h">Plans</h2>
+  <div class="plans3">
+    <div class="plan3"><h3>Solo</h3><p class="pr"><b>₹999</b> a month</p><p class="pr2">or ₹9,990 a year</p><ul><li>Compliance reminders</li><li>Tasks, calendar and voice notes</li><li>Startup, VC and government news</li><li>1 company</li></ul></div>
+    <div class="plan3 rec"><h3>Founder</h3><p class="pr"><b>₹2,499</b> a month</p><p class="pr2">or ₹24,990 a year</p><ul><li>Everything in Solo</li><li>Reminders to your CA or CS</li><li>Runway prediction</li><li>Investor updates, up to 10 people</li><li>Competitor tracking and company summaries</li></ul></div>
+    <div class="plan3"><h3>Chief of Staff</h3><p class="pr"><b>₹4,999</b> a month</p><p class="pr2">or ₹49,990 a year</p><ul><li>Everything in Founder</li><li>Up to 3 companies</li><li>Unlimited investor updates</li><li>Priority WhatsApp support</li></ul></div>
+  </div>
+  <p class="plan-note">Yearly plans include two months free. Plans renew automatically until you cancel, and you can cancel anytime. Prices in Indian rupees. <span class="ph">GST: confirm if included or added</span> See the <a href="#terms">Terms</a> and <a href="#refund">Refund Policy</a>.</p>
+  <a class="cta cta-inline" data-chat href="https://wa.me/919778454998?text=Hi%20Runwise" target="_blank" rel="noopener"><span>Chat with Runwise</span></a>
+</div></section>
 <section class="legal" id="privacy" role="dialog" aria-modal="true" aria-label="Privacy Policy" tabindex="-1"><div class="inner"><a class="back" href="#">← Back to Runwise</a><article>
 
 <h1>Privacy Policy</h1>
@@ -171,6 +269,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
 </ul>
 <h2>3. Why we use it (purposes)</h2>
 <ul>
+<li>To send you the WhatsApp message you asked for after you enter your number.</li>
 <li>To create and run your account and deliver the Runwise features you chose.</li>
 <li>To send reminders, summaries and, if you instruct us, updates to people you nominate (such as your CA, CS or investors).</li>
 <li>To process payments, keep tax and accounting records and meet legal obligations.</li>
@@ -376,32 +475,88 @@ h1 em{font-style:italic;font-weight:400;color:var(--accent);padding-right:.04em;
     cta.addEventListener("pointerleave", function () { cta.style.setProperty("--tx", "0px"); cta.style.setProperty("--ty", "0px"); });
   }
 
-  /* ---------- One-time consent before opening WhatsApp ---------- */
-  var CKEY = "runwise_consent_v1", gate = document.getElementById("gate"), ok = document.getElementById("gate-ok"), go = document.getElementById("gate-go");
+  /* ---------- "Let Runwise text you": collect the number, one-time consent ---------- */
+  var ENDPOINT = "";   // set at build time; empty means preview mode (nothing is sent)
+  var CKEY = "runwise_consent_v1";
+  var gate = document.getElementById("gate"), gForm = document.getElementById("gate-form"), gPhone = document.getElementById("gate-phone"),
+      gOk = document.getElementById("gate-ok"), gGo = document.getElementById("gate-go"), gErr = document.getElementById("gate-err"),
+      gMain = document.getElementById("gate-main"), gDone = document.getElementById("gate-done"), lastTrigger = null;
   function hasConsent() { try { return !!localStorage.getItem(CKEY); } catch (e) { return false; } }
   function saveConsent() { try { localStorage.setItem(CKEY, new Date().toISOString()); } catch (e) {} }
-  function closeGate() { gate.hidden = true; if (cta) cta.focus(); }
-  if (cta && gate && ok && go) {
-    cta.addEventListener("click", function (e) {
-      if (hasConsent()) return;                 // already agreed once: go straight to WhatsApp
-      e.preventDefault();
-      ok.checked = false; go.setAttribute("aria-disabled", "true");
-      gate.hidden = false; ok.focus();
+  function normPhone(v) {
+    var s = String(v).replace(/[\s().-]/g, "");
+    if (/^\+\d{8,15}$/.test(s)) return s;
+    if (/^0?[6-9]\d{9}$/.test(s)) return "+91" + s.slice(-10);
+    if (/^91[6-9]\d{9}$/.test(s)) return "+" + s;
+    return null;
+  }
+  function showErr(msg) { gErr.textContent = msg; gErr.hidden = !msg; gPhone.setAttribute("aria-invalid", msg ? "true" : "false"); }
+  function openGate(trigger) {
+    lastTrigger = trigger || null;
+    if (location.hash) location.hash = "";          // close any open panel first
+    var agreed = hasConsent();
+    document.getElementById("gate-consent").hidden = agreed;
+    document.getElementById("gate-agreed").hidden = !agreed;
+    document.getElementById("gate-preview").hidden = !!ENDPOINT;
+    gOk.checked = false; gGo.disabled = false; showErr("");
+    gMain.hidden = false; gDone.hidden = true; gate.hidden = false; gPhone.focus();
+  }
+  function closeGate() { gate.hidden = true; if (lastTrigger) lastTrigger.focus(); }
+  function finish(sent) {
+    document.getElementById("gate-done-h").textContent = sent ? "Check your WhatsApp" : "Preview only";
+    document.getElementById("gate-done-p").textContent = sent ? "Runwise will message you shortly." : "Your number was not sent or saved, because this page is not connected yet.";
+    gMain.hidden = true; gDone.hidden = false; document.getElementById("gate-close").focus();
+  }
+  if (gate && gForm) {
+    document.querySelectorAll("[data-chat]").forEach(function (el) {
+      el.addEventListener("click", function (e) { e.preventDefault(); openGate(el); });
     });
-    ok.addEventListener("change", function () { go.setAttribute("aria-disabled", ok.checked ? "false" : "true"); });
-    go.addEventListener("click", function (e) {
-      if (go.getAttribute("aria-disabled") === "true") { e.preventDefault(); ok.focus(); return; }
-      saveConsent(); gate.hidden = true;        // default action opens WhatsApp in a new tab
+    gForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (gForm.elements["website"].value) return;   // honeypot
+      var p = normPhone(gPhone.value);
+      if (!p) { showErr("Enter a valid WhatsApp number, for example +91 98765 43210."); gPhone.focus(); return; }
+      var needTick = !hasConsent();
+      if (needTick && !gOk.checked) { showErr("Please tick the box to agree before we text you."); gOk.focus(); return; }
+      showErr("");
+      if (!ENDPOINT) { finish(false); return; }
+      gGo.disabled = true;
+      var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 15000);
+      fetch(ENDPOINT, {
+        method: "POST", headers: { "Content-Type": "application/json" }, signal: ctl.signal, credentials: "omit",
+        body: JSON.stringify({ phone: p, consent: true, consentVersion: "2026-10", source: "home" })
+      }).then(function (r) {
+        clearTimeout(timer);
+        if (r.status === 429) throw new Error("Too many attempts. Please try again in a few minutes.");
+        if (!r.ok) throw new Error("Something went wrong. Please try again.");
+        saveConsent(); finish(true);
+      }).catch(function (err) {
+        clearTimeout(timer); gGo.disabled = false;
+        showErr(err.name === "AbortError" ? "That took too long. Please try again." : (err.message || "Network error. Please try again."));
+      });
     });
     document.getElementById("gate-cancel").addEventListener("click", closeGate);
+    document.getElementById("gate-close").addEventListener("click", closeGate);
     gate.addEventListener("click", function (e) { if (e.target === gate) closeGate(); });
     gate.addEventListener("keydown", function (e) {
       if (e.key !== "Tab") return;
-      var f = [ok, go, document.getElementById("gate-cancel")].concat([].slice.call(gate.querySelectorAll("a[href^='#']")));
+      var f = [].slice.call(gate.querySelectorAll("input,button,a[href]")).filter(function (n) { return n.tabIndex >= 0 && n.offsetParent !== null; });
+      if (!f.length) return;
       var first = f[0], last = f[f.length - 1];
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
+  }
+
+  /* ---------- Solutions dropdown ---------- */
+  var sb = document.getElementById("sol-btn"), sm = document.getElementById("sol-menu");
+  function setSol(open) { if (!sb) return; sb.setAttribute("aria-expanded", String(open)); sm.hidden = !open; }
+  if (sb && sm) {
+    sb.addEventListener("click", function () { setSol(sm.hidden); });
+    sb.addEventListener("keydown", function (e) { if (e.key === "ArrowDown") { e.preventDefault(); setSol(true); sm.querySelector("a").focus(); } });
+    sm.addEventListener("click", function (e) { if (e.target.closest("a")) setSol(false); });
+    document.addEventListener("click", function (e) { if (!e.target.closest(".sol")) setSol(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !sm.hidden) { setSol(false); sb.focus(); } });
   }
 
   /* ---------- Legal overlays: focus in, Escape out ---------- */

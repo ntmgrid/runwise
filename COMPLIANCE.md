@@ -32,3 +32,9 @@ Not legal advice. Have an Indian lawyer review before launch.
 - Passwords (if any): argon2id/bcrypt. Encrypt connected-tool OAuth tokens at rest.
 - Database: no public access, least-privilege roles, backups. Debug off in production.
 - `npm audit` / Dependabot; remove unused packages; secret scanning (gitleaks) in CI.
+
+## Number collection and WhatsApp messaging (added)
+- The site collects a phone number, so Privacy Policy lists it and why. Consent text version is `2026-10`; bump it when wording changes.
+- WhatsApp Business rules: only message people who opted in (the tick box is the opt-in), start chats with an approved template, honour "stop" replies, and keep proof of consent (stored in `leads` by the backend).
+- Consent is currently remembered only in the visitor's browser. The backend stores the permanent record.
+- Under the DPDP Act, give people an easy way to withdraw consent and delete their number (email the contact address, and add a "STOP" handler on WhatsApp).
